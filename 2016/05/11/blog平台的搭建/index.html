@@ -5,16 +5,19 @@
   
   <title>blog平台的搭建 | 前端之坎</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="怎样搭建自己的blog平台？node.js官网https://nodejs.org/en/1、从以上网址下载并安装node.js搭建环境判断node是否安装成功？打开电脑终端，在里面输入node，按下回车，若出现尖括号输入则表示安装成功2、搭建hexo环境：在终端执行sudo npm install -g hexo3、在终端执行mkdir blog以创建一个blog文件夹用来承载所有的blog文件">
+  <meta name="description" content="怎样搭建自己的blog平台？node.js官网https://nodejs.org/en/1、从以上网址下载并安装node.js搭建环境判断node是否安装成功？打开电脑终端，在里面输入node，按下回车，若出现尖括号输入则表示安装成功2、搭建hexo环境：在终端执行sudo npm install -g hexo  
+1xxMacBook-Pro:blog user$ sudo npm inst">
 <meta property="og:type" content="article">
 <meta property="og:title" content="blog平台的搭建">
 <meta property="og:url" content="http://yoursite.com/2016/05/11/blog平台的搭建/index.html">
 <meta property="og:site_name" content="前端之坎">
-<meta property="og:description" content="怎样搭建自己的blog平台？node.js官网https://nodejs.org/en/1、从以上网址下载并安装node.js搭建环境判断node是否安装成功？打开电脑终端，在里面输入node，按下回车，若出现尖括号输入则表示安装成功2、搭建hexo环境：在终端执行sudo npm install -g hexo3、在终端执行mkdir blog以创建一个blog文件夹用来承载所有的blog文件">
-<meta property="og:updated_time" content="2016-05-11T14:18:26.000Z">
+<meta property="og:description" content="怎样搭建自己的blog平台？node.js官网https://nodejs.org/en/1、从以上网址下载并安装node.js搭建环境判断node是否安装成功？打开电脑终端，在里面输入node，按下回车，若出现尖括号输入则表示安装成功2、搭建hexo环境：在终端执行sudo npm install -g hexo  
+1xxMacBook-Pro:blog user$ sudo npm inst">
+<meta property="og:updated_time" content="2016-05-11T15:08:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="blog平台的搭建">
-<meta name="twitter:description" content="怎样搭建自己的blog平台？node.js官网https://nodejs.org/en/1、从以上网址下载并安装node.js搭建环境判断node是否安装成功？打开电脑终端，在里面输入node，按下回车，若出现尖括号输入则表示安装成功2、搭建hexo环境：在终端执行sudo npm install -g hexo3、在终端执行mkdir blog以创建一个blog文件夹用来承载所有的blog文件">
+<meta name="twitter:description" content="怎样搭建自己的blog平台？node.js官网https://nodejs.org/en/1、从以上网址下载并安装node.js搭建环境判断node是否安装成功？打开电脑终端，在里面输入node，按下回车，若出现尖括号输入则表示安装成功2、搭建hexo环境：在终端执行sudo npm install -g hexo  
+1xxMacBook-Pro:blog user$ sudo npm inst">
   
     <link rel="alternate" href="/atom.xml" title="前端之坎" type="application/atom+xml">
   
@@ -89,15 +92,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="怎样搭建自己的blog平台？"><a href="#怎样搭建自己的blog平台？" class="headerlink" title="怎样搭建自己的blog平台？"></a>怎样搭建自己的blog平台？</h1><h2 id="node-js官网https-nodejs-org-en"><a href="#node-js官网https-nodejs-org-en" class="headerlink" title="node.js官网https://nodejs.org/en/"></a>node.js官网<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></h2><p>1、从以上网址下载并安装node.js搭建环境<br>判断node是否安装成功？打开电脑终端，在里面输入node，按下回车，若出现尖括号输入则表示安装成功<br>2、搭建hexo环境：在终端执行sudo npm install -g hexo<br>3、在终端执行mkdir blog以创建一个blog文件夹用来承载所有的blog文件<br>4、创建blog环境，在终端执行hexo init<br>5、创建新的blog文章，在终端执行hexo new xxxname(文件名)<br>6、本地运行，终端执行hexo server  </p>
-<h1 id="怎样搭建二级服务器上传自己的blog？"><a href="#怎样搭建二级服务器上传自己的blog？" class="headerlink" title="怎样搭建二级服务器上传自己的blog？"></a>怎样搭建二级服务器上传自己的blog？</h1><h3 id="首先我们需要创建一个github账号，github官网https-github-com"><a href="#首先我们需要创建一个github账号，github官网https-github-com" class="headerlink" title="首先我们需要创建一个github账号，github官网https://github.com/"></a>首先我们需要创建一个github账号，github官网<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></h3><p>1、有了账号我们需要创建一个仓库即repository，该名字必须是你的用户名.github.io<br>2、创建一个密匙，先在终端执行 ssh-keygen，获取密匙，再执行 vim ~/.ssh/id_rsa.pub 查看密匙，复制所有的英文，点击Settings里面的SSH and GPG keys中的 NEW SSH   key，将复制的内容粘贴到key中，并在title中取名<br>3、在终端执行 npm install hexo-deployer-git —save以安装插件<br>4、在终端执行克隆操作 git clone 你创建仓库的SSH类型的url<br>5、在这里执行本地blog的操作<br>6、你可以通过执行git status获取当前的修改状态，git add .添加修改状态，git commit -m”修改日志”等操作<br>7、将修改上传至暂存区，在终端执行git remote add origin 你创建仓库的SSH类型的url 和 git push -u origin master<br>8、输入你的github账号和邮箱，在终端执行 git config –global user.name “xxx” 和 git config –global user.email eamil<br>9、上传只服务器在终端执行hexo g和hexo d  </p>
+        <h1 id="怎样搭建自己的blog平台？"><a href="#怎样搭建自己的blog平台？" class="headerlink" title="怎样搭建自己的blog平台？"></a>怎样搭建自己的blog平台？</h1><h2 id="node-js官网https-nodejs-org-en"><a href="#node-js官网https-nodejs-org-en" class="headerlink" title="node.js官网https://nodejs.org/en/"></a>node.js官网<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></h2><p>1、从以上网址下载并安装node.js搭建环境<br>判断node是否安装成功？打开电脑终端，在里面输入node，按下回车，若出现尖括号输入则表示安装成功<br>2、搭建hexo环境：在终端执行sudo npm install -g hexo  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxMacBook-Pro:blog user$ sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
+<p>3、在终端执行mkdir blog以创建一个blog文件夹用来承载所有的blog文件 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">xxMacBook-Pro:blog user$  mkdir blog(名字可自己取)</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">4、创建blog环境，在终端执行hexo init  </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">xxMacBook-Pro:blog user$ hexo init</span><br></pre></td></tr></table></figure>
+<p>5、创建新的blog文章，在终端执行hexo new xxxname(文件名) </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">xxMacBook-Pro:blog user$  hexo new first</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">6、本地运行，终端执行hexo server   </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">xxMacBook-Pro:blog user$  hexo server</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 怎样搭建二级服务器上传自己的blog？  </span></span><br><span class="line"><span class="comment">### 首先我们需要创建一个github账号，github官网&lt;https://github.com/&gt;  </span></span><br><span class="line">1、有了账号我们需要创建一个仓库即repository，该名字必须是你的用户名.github.io  </span><br><span class="line">2、创建一个密匙，先在终端执行 ssh-keygen，获取密匙，再执行 vim ~/.ssh/id_rsa.pub 查看密匙，复制所有的英文，点击Settings里面的SSH and GPG keys中的 NEW SSH   key，将复制的内容粘贴到key中，并在title中取名  </span><br><span class="line">3、在终端执行 npm install hexo-deployer-git —save以安装插件 </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">xxMacBook-Pro:blog user$ npm install hexo-deployer-git —save</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">4、在终端执行克隆操作 git <span class="built_in">clone</span> 你创建仓库的SSH类型的url  </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">xxMacBook-Pro:blog user$ git <span class="built_in">clone</span> git@github.com:xxx/html.git</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">5、在这里执行本地blog的操作  </span><br><span class="line">6、你可以通过执行git status获取当前的修改状态，git add .添加修改状态，git commit -m<span class="string">"修改日志"</span>等操作   </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">xxMacBook-Pro:blog user$ git add .</span><br><span class="line">``` </span><br><span class="line">``` bash</span><br><span class="line">xxMacBook-Pro:blog user$  git commit -m<span class="string">"我修改了哪部分内容"</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">7、将修改上传至暂存区，在终端执行git remote add origin 你创建仓库的SSH类型的url 和 git push -u origin master   </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">xxMacBook-Pro:blog user$  git remote add origin git@github.com:xxx/html.git</span><br><span class="line">``` </span><br><span class="line">``` bash</span><br><span class="line">xxMacBook-Pro:blog user$  git  </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">8、输入你的github账号和邮箱，在终端执行 git config --global user.name <span class="string">"xxx"</span> 和 git config --global user.email eamil  </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">xxMacBook-Pro:blog user$  git config --global user.name <span class="string">"xxx"</span></span><br><span class="line">``` </span><br><span class="line">``` bash</span><br><span class="line">xxMacBook-Pro:blog user$  git config --global user.email eamil</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">9、上传只服务器在终端执行hexo g和hexo d  </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">xxMacBook-Pro:blog user$ hexo g</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">xxMacBook-Pro:blog user$ hexo d
+</code></pre>
+<p>10、复制你创建的链接即可进入你编辑的博客</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/blog平台的搭建/" data-id="cio2ybrde00004keo33pt4p25" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/blog平台的搭建/" data-id="cio303o5n0000ajeodtm2vqn2" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog搭建/">blog搭建</a></li></ul>
+
     </footer>
   </div>
   
@@ -123,9 +135,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog搭建/">blog搭建</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/blog搭建/" style="font-size: 10px;">blog搭建</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
