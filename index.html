@@ -68,43 +68,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-second" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/11/second/" class="article-date">
-  <time datetime="2016-05-11T11:58:56.000Z" itemprop="datePublished">2016-05-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/11/second/">second</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>＃ Github 的简单操作</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/second/" data-id="cio2v8bdn0002z9eor1g8rmzd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-blog平台的搭建" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/11/blog平台的搭建/" class="article-date">
@@ -127,12 +90,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="怎样搭建自己的Blog平台？"><a href="#怎样搭建自己的Blog平台？" class="headerlink" title="怎样搭建自己的Blog平台？"></a>怎样搭建自己的Blog平台？</h1><h2 id="node-js官网https-nodejs-org-en"><a href="#node-js官网https-nodejs-org-en" class="headerlink" title="node.js官网https://nodejs.org/en/"></a>node.js官网<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></h2><p>1、从以上网址下载并安装node.js搭建环境</p><br><p>判断node是否安装成功？打开电脑终端，在里面输入node，按下回车，若出现尖括号输入则表示安装成功</p><br><p>2、搭建hexo环境：在终端执行sudo npm install -g hexo</p><br><p>3、在终端执行mkdir blog以创建一个blog文件夹用来承载所有的blog文件</p><br><p>4、创建blog环境，在终端执行hexo init</p><br><p>5、创建新的blog文章，在终端执行hexo new xxxname(文件名)</p><br><p>6、本地运行，终端执行hexo server</p><br># 怎样搭建二级服务器上传自己的blog？<br>### 首先我们需要创建一个github账号，github官网<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a><br><p>1、有了账号我们需要创建一个仓库</p>
+        <h1 id="怎样搭建自己的Blog平台？"><a href="#怎样搭建自己的Blog平台？" class="headerlink" title="怎样搭建自己的Blog平台？"></a>怎样搭建自己的Blog平台？</h1><h2 id="node-js官网https-nodejs-org-en"><a href="#node-js官网https-nodejs-org-en" class="headerlink" title="node.js官网https://nodejs.org/en/"></a>node.js官网<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></h2><p>1、从以上网址下载并安装node.js搭建环境<br>判断node是否安装成功？打开电脑终端，在里面输入node，按下回车，若出现尖括号输入则表示安装成功<br>2、搭建hexo环境：在终端执行sudo npm install -g hexo<br>3、在终端执行mkdir blog以创建一个blog文件夹用来承载所有的blog文件<br>4、创建blog环境，在终端执行hexo init<br>5、创建新的blog文章，在终端执行hexo new xxxname(文件名)<br>6、本地运行，终端执行hexo server  </p>
+<h1 id="怎样搭建二级服务器上传自己的blog？"><a href="#怎样搭建二级服务器上传自己的blog？" class="headerlink" title="怎样搭建二级服务器上传自己的blog？"></a>怎样搭建二级服务器上传自己的blog？</h1><h3 id="首先我们需要创建一个github账号，github官网https-github-com"><a href="#首先我们需要创建一个github账号，github官网https-github-com" class="headerlink" title="首先我们需要创建一个github账号，github官网https://github.com/"></a>首先我们需要创建一个github账号，github官网<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></h3><p>1、有了账号我们需要创建一个仓库即repository，该名字必须是你的用户名.github.io<br>2、创建一个密匙，先在终端执行 ssh-keygen，获取密匙，再执行 vim ~/.ssh/id_rsa.pub 查看密匙，复制所有的英文，点击Settings里面的SSH and GPG keys中的 NEW SSH   key，将复制的内容粘贴到key中，并在title中取名<br>3、在终端执行 npm install hexo-deployer-git —save以安装插件<br>4、在终端执行克隆操作 git clone 你创建仓库的SSH类型的url<br>5、在这里执行本地blog的操作<br>6、你可以通过执行git status获取当前的修改状态，git add .添加修改状态，git commit -m”修改日志”等操作<br>7、将修改上传至暂存区，在终端执行git remote add origin 你创建仓库的SSH类型的url 和 git push -u origin master<br>8、输入你的github账号和邮箱，在终端执行 git config –global user.name “xxx” 和 git config –global user.email eamil<br>9、上床只服务器在终端执行hexo g和hexo d  </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/blog平台的搭建/" data-id="cio2v8bd10000z9eo69rszacf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/blog平台的搭建/" data-id="cio2wkump00000ueonm4l4t9j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/11/hello-world/" data-id="cio2v8bd80001z9eoy3tvo42h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/11/hello-world/" data-id="cio2wkumw00010ueogz0iam26" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,10 +179,6 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2016/05/11/second/">second</a>
-          </li>
         
           <li>
             <a href="/2016/05/11/blog平台的搭建/">first</a>
