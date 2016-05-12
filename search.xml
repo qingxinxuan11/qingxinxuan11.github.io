@@ -4,9 +4,30 @@
   
     
     <entry>
+      <title><![CDATA[伪元素]]></title>
+      <url>http://yoursite.com/2016/05/12/%E4%BC%AA%E5%85%83%E7%B4%A0/</url>
+      <content type="html"><![CDATA[<h1 id="css之伪元素"><a href="#css之伪元素" class="headerlink" title="css之伪元素"></a>css之伪元素</h1><h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>我们先来说说伪类吧，它是一种状态，不是一个元素，基本的伪类有4种，分别是link、visited、hover、active。<br>link：适用于未被访问的链接<br>visited：和link相反，适用于被访问的链接<br>hover：可以定义鼠标移入时的效果，但是元素未被激活，例如用户的鼠标移至一个元素时，给当前元素设定一个效果。当用户鼠标离开元素时，恢复元素原有的样式显示。<br>active：适用于元素被激活时的样式，例如用户在按下鼠标之后，给元素一个效果，当用户放开鼠标后，恢复元素原有的样式。<br><a id="more"></a></p>
+<h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><p>基本常用的伪元素包括::first-line、::before、::after、::section、::first-letter<br>1、::first-line 匹配的是第一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;text&quot;&gt;</span><br><span class="line">	&lt;li&gt;First line&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;Second line&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;Third line&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt; </span><br><span class="line">&lt;style&gt;</span><br><span class="line">	.text::first-line&#123;</span><br><span class="line">		color: red;	</span><br><span class="line">	&#125;	</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>以上代码输出First line的字体颜色是红色    </p>
+<p>2、::first-letter 匹配的是第一个字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;ABCDEF&lt;/p&gt; </span><br><span class="line">&lt;style&gt;</span><br><span class="line">	p::first-letter&#123;</span><br><span class="line">		color: red;</span><br><span class="line">	&#125;	</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>以上代码输出A是红色的</p>
+<p>3、::before 匹配的是该元素的之前的内容 和::after 匹配的是该元素的之后的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">	div::before&#123;</span><br><span class="line">		content: &apos;前内容&apos;;//引号中可以添加你需要在元素之前插入的内容，若无内容，该语句也不能省略！</span><br><span class="line">	&#125;</span><br><span class="line">	div::after&#123;</span><br><span class="line">		content: &apos;后内容&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>以上代码是在div之前插入前内容，在其之后插入后内容    </p>
+<p>4、::section 该元素作用是自定义鼠标选择样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	::selection&#123;</span><br><span class="line">		background-color: blue;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>该代码作用是自定义选中时,背景颜色是蓝色   </p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[jQuery之基础]]></title>
       <url>http://yoursite.com/2016/03/12/jQuery%E4%B9%8B%E5%9F%BA%E7%A1%80/</url>
       <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[正则之一二事]]></title>
+      <url>http://yoursite.com/2016/02/12/%E6%AD%A3%E5%88%99%E4%B9%8B%E4%B8%80%E4%BA%8C%E4%BA%8B/</url>
+      <content type="html"><![CDATA[<h3 id="本人也是刚接触正则，跟大家感受其实一样，火星文，但是花点耐心研究一下其实还是不难懂的"><a href="#本人也是刚接触正则，跟大家感受其实一样，火星文，但是花点耐心研究一下其实还是不难懂的" class="headerlink" title="本人也是刚接触正则，跟大家感受其实一样，火星文，但是花点耐心研究一下其实还是不难懂的"></a>本人也是刚接触正则，跟大家感受其实一样，火星文，但是花点耐心研究一下其实还是不难懂的</h3><h1 id="火星文之正则浅谈"><a href="#火星文之正则浅谈" class="headerlink" title="火星文之正则浅谈"></a>火星文之正则浅谈</h1>]]></content>
     </entry>
     
     <entry>
