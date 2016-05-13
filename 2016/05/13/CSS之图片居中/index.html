@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jQuery之基础 | 前端之坎</title>
+  <title>CSS之图片居中 | 前端之坎</title>
   <meta name="author" content="Roger">
+  
+  <meta name="description" content="我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？CSS之图片居中代码其实很简单，如下12345678910111213141516&amp;lt">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="jQuery之基础"/>
+  <meta property="og:title" content="CSS之图片居中"/>
   <meta property="og:site_name" content="前端之坎"/>
 
   
@@ -89,7 +91,7 @@
 
 	
 		<div class="page-header page-header-inverse ">		
-			<h1 class="title title-inverse "> jQuery之基础</h1>
+			<h1 class="title title-inverse "> CSS之图片居中</h1>
 		</div>		
 	
 
@@ -109,7 +111,9 @@
 	<div class="mypage">		
 	  		
 
-	  	  
+	  <h3 id="我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？"><a href="#我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？" class="headerlink" title="我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？"></a>我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？</h3><h1 id="CSS之图片居中"><a href="#CSS之图片居中" class="headerlink" title="CSS之图片居中"></a>CSS之图片居中</h1><p>代码其实很简单，如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;div1&quot;&gt;</span><br><span class="line">	&lt;img src=&quot;你的图片路径&quot; alt=&quot;&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">	.div1&#123;</span><br><span class="line">		width: 500px;</span><br><span class="line">		height: 300px;/* 我们假设展示框的宽高分别是500px和300px */</span><br><span class="line">		text-align: center;/* 设置框内内容水平居中 */</span><br><span class="line">		display: table-cell;/* 将框内内容转换成table元素（方便垂直居中） */</span><br><span class="line">		vertical-align: middle;/* 实现垂直居中 */</span><br><span class="line">	&#125;</span><br><span class="line">	.div img&#123;</span><br><span class="line">		max-width: 100%;</span><br><span class="line">		max-height: 100%;/* 这两句话：图片要么宽度最宽与展示框宽度一样，要么高度与展示框高度一样，要么就自己宽高不变，三种情况会自己判断选择 */</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="具体展示如下"><a href="#具体展示如下" class="headerlink" title="具体展示如下"></a>具体展示如下</h2><p><img src="http://o70mrjf9r.bkt.clouddn.com/WeChat_1463108374.jpeg" alt=""><br><img src="http://o70mrjf9r.bkt.clouddn.com/WeChat_1463108476.jpeg" alt=""><br><img src="http://o70mrjf9r.bkt.clouddn.com/WeChat_1463108221.jpeg" alt=""></p>
+	  
 	</div>
 
 	<div>
@@ -117,14 +121,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2016/05/12/正则之一二事/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2016/02/02/JS之基础/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2016/05/12/伪元素/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -163,7 +167,7 @@
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="2016/03/12/jQuery之基础/" data-title="jQuery之基础" data-url="http://yoursite.com/2016/03/12/jQuery之基础/"></div>  
+  	 <div class="ds-thread" data-thread-key="2016/05/13/CSS之图片居中/" data-title="CSS之图片居中" data-url="http://yoursite.com/2016/05/13/CSS之图片居中/"></div>  
   
 </section>
 
@@ -177,7 +181,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2016-03-12 
+	2016-05-13 
 	</div>
 	
 
@@ -185,6 +189,14 @@
     
 
 	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/图片居中/">图片居中<span>1</span></a></li>
+    </ul>
+	</div>
 		
 
 	<!-- toc -->

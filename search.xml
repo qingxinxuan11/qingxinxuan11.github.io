@@ -4,6 +4,14 @@
   
     
     <entry>
+      <title><![CDATA[CSS之图片居中]]></title>
+      <url>http://yoursite.com/2016/05/13/CSS%E4%B9%8B%E5%9B%BE%E7%89%87%E5%B1%85%E4%B8%AD/</url>
+      <content type="html"><![CDATA[<h3 id="我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？"><a href="#我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？" class="headerlink" title="我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？"></a>我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？</h3><h1 id="CSS之图片居中"><a href="#CSS之图片居中" class="headerlink" title="CSS之图片居中"></a>CSS之图片居中</h1><p>代码其实很简单，如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;div1&quot;&gt;</span><br><span class="line">	&lt;img src=&quot;你的图片路径&quot; alt=&quot;&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">	.div1&#123;</span><br><span class="line">		width: 500px;</span><br><span class="line">		height: 300px;/* 我们假设展示框的宽高分别是500px和300px */</span><br><span class="line">		text-align: center;/* 设置框内内容水平居中 */</span><br><span class="line">		display: table-cell;/* 将框内内容转换成table元素（方便垂直居中） */</span><br><span class="line">		vertical-align: middle;/* 实现垂直居中 */</span><br><span class="line">	&#125;</span><br><span class="line">	.div img&#123;</span><br><span class="line">		max-width: 100%;</span><br><span class="line">		max-height: 100%;/* 这两句话：图片要么宽度最宽与展示框宽度一样，要么高度与展示框高度一样，要么就自己宽高不变，三种情况会自己判断选择 */</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="具体展示如下"><a href="#具体展示如下" class="headerlink" title="具体展示如下"></a>具体展示如下</h2><p><img src="http://o70mrjf9r.bkt.clouddn.com/WeChat_1463108374.jpeg" alt=""><br><img src="http://o70mrjf9r.bkt.clouddn.com/WeChat_1463108476.jpeg" alt=""><br><img src="http://o70mrjf9r.bkt.clouddn.com/WeChat_1463108221.jpeg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[伪元素]]></title>
       <url>http://yoursite.com/2016/05/12/%E4%BC%AA%E5%85%83%E7%B4%A0/</url>
       <content type="html"><![CDATA[<h1 id="css之伪元素"><a href="#css之伪元素" class="headerlink" title="css之伪元素"></a>css之伪元素</h1><h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>我们先来说说伪类吧，它是一种状态，不是一个元素，基本的伪类有4种，分别是link、visited、hover、active。<br>link：适用于未被访问的链接<br>visited：和link相反，适用于被访问的链接<br>hover：可以定义鼠标移入时的效果，但是元素未被激活，例如用户的鼠标移至一个元素时，给当前元素设定一个效果。当用户鼠标离开元素时，恢复元素原有的样式显示。<br>active：适用于元素被激活时的样式，例如用户在按下鼠标之后，给元素一个效果，当用户放开鼠标后，恢复元素原有的样式。<br><a id="more"></a></p>
@@ -19,15 +27,17 @@
     </entry>
     
     <entry>
-      <title><![CDATA[jQuery之基础]]></title>
-      <url>http://yoursite.com/2016/03/12/jQuery%E4%B9%8B%E5%9F%BA%E7%A1%80/</url>
-      <content type="html"></content>
+      <title><![CDATA[正则之一二事]]></title>
+      <url>http://yoursite.com/2016/05/12/%E6%AD%A3%E5%88%99%E4%B9%8B%E4%B8%80%E4%BA%8C%E4%BA%8B/</url>
+      <content type="html"><![CDATA[<h3 id="本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。"><a href="#本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。" class="headerlink" title="本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。"></a>本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。</h3><h1 id="火星文之正则浅谈"><a href="#火星文之正则浅谈" class="headerlink" title="火星文之正则浅谈"></a>火星文之正则浅谈</h1><p>定义正则一般的格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	var reg = /\b/i;// 通常是反斜杠中写入内容，例/b/就等同于&quot;b&quot;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
     </entry>
     
     <entry>
-      <title><![CDATA[正则之一二事]]></title>
-      <url>http://yoursite.com/2016/02/12/%E6%AD%A3%E5%88%99%E4%B9%8B%E4%B8%80%E4%BA%8C%E4%BA%8B/</url>
-      <content type="html"><![CDATA[<h3 id="本人也是刚接触正则，跟大家感受其实一样，火星文，但是花点耐心研究一下其实还是不难懂的"><a href="#本人也是刚接触正则，跟大家感受其实一样，火星文，但是花点耐心研究一下其实还是不难懂的" class="headerlink" title="本人也是刚接触正则，跟大家感受其实一样，火星文，但是花点耐心研究一下其实还是不难懂的"></a>本人也是刚接触正则，跟大家感受其实一样，火星文，但是花点耐心研究一下其实还是不难懂的</h3><h1 id="火星文之正则浅谈"><a href="#火星文之正则浅谈" class="headerlink" title="火星文之正则浅谈"></a>火星文之正则浅谈</h1>]]></content>
+      <title><![CDATA[jQuery之基础]]></title>
+      <url>http://yoursite.com/2016/03/12/jQuery%E4%B9%8B%E5%9F%BA%E7%A1%80/</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
