@@ -161,16 +161,6 @@
 	
 		<h3 id="本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。"><a href="#本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。" class="headerlink" title="本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。"></a>本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。</h3><h1 id="火星文之正则浅谈"><a href="#火星文之正则浅谈" class="headerlink" title="火星文之正则浅谈"></a>火星文之正则浅谈</h1><p>定义正则一般的格式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	var re = /\b/;// 通常是反斜杠中写入内容</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="以下是一些常用的正则符号"><a href="#以下是一些常用的正则符号" class="headerlink" title="以下是一些常用的正则符号"></a>以下是一些常用的正则符号</h3><p><img src="http://o70mrjf9r.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-05-14%20%E4%B8%8A%E5%8D%8810.17.25.png" alt=""></p>
-<p>以上是我目前所学的一些常用符号，下面将具体介绍一些实例：<br>很多情况下我们使用正则一般是为了配合数组的操作，最常用的几个是match()匹配，replace()替换等等，在这里我就用match()来举例，我们假设创建了一字符串2asD3fg4H56Jk8l；<br>简单的我们先来匹配一下数字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;2asD3fg4H56Jk8l&quot;;</span><br><span class="line">var re2=/\d/;</span><br><span class="line">console.log(str.match(re));//2</span><br></pre></td></tr></table></figure></p>
-<p>以上都能实现的事匹配一位数字，若要匹配所有数字，就要用g去匹配全局，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;2asD3fg4H56Jk8l&quot;;</span><br><span class="line">var re2=/\d/g;</span><br><span class="line">console.log(str.match(re));//234568</span><br></pre></td></tr></table></figure></p>
-<p>学习匹配字母：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;2asD3fg4H56Jk8l&quot;;</span><br><span class="line">var re2=/[a-z]/g;//匹配所有的小写字母</span><br><span class="line">console.log(str.match(re));//asfgkl</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;2asD3fg4H56Jk8l&quot;;</span><br><span class="line">var re2=/[A-Z]/g;//匹配所有的大写字母</span><br><span class="line">console.log(str.match(re));//DHJ</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;2asD3fg4H56Jk8l&quot;;</span><br><span class="line">var re2=/[a-z]/ig;//匹配所有的字母,i表示忽略大小写</span><br><span class="line">console.log(str.match(re));//asDfgHJkl</span><br></pre></td></tr></table></figure>
-<p>我们实现一下手机号码的匹配：<br>手机号码是由11位数字组成，第一位一定是1，第二位是3，5，8（就目前我所知道的，如果还有其他的，你们可以自行修改），后面9位就是随机的数字了吧<br>我们拆分翻译就是1,[3,5,8],[0-9]{9},合起来的代码就是^1[3,5,8][0-9]{9}$，前后加^$的意思就是前后不能有空格，用代码写出来就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var re=/^1[3,5,8][0-9]&#123;9&#125;$/;</span><br></pre></td></tr></table></figure></p>
-<p> 最后我们写一下匹配邮箱的正则，大家都知道邮箱的组成吧，它是由任意字符+@+数字或者字母+.+域名（2到4位小写字母）<br>以上公式拆分转换成正则就是\w+,@,[0-9a-z]+,.,[a-z]{2,4}，同样我们要在前后加上^$，以确保前后没有空格存在，即\w+@[0-9a-z].[a-z]{2,4}转换成代码就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var re=/^\w+@[0-9a-z]+\.[a-z]&#123;2,4&#125;$/;</span><br></pre></td></tr></table></figure></p>
-<p>＃ 这些知识九牛一毛，待我日后完善</p>
-
 	
 	</div>
   <a type="button" href="/2016/05/12/正则之一二事/#more" class="btn btn-default more">阅读此文</a>
@@ -303,13 +293,13 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/伪类-伪元素/">伪类 伪元素<span>1</span></a></li>
-		
-			<li><a href="/tags/图片居中/">图片居中<span>1</span></a></li>
+			<li><a href="/tags/blog搭建/">blog搭建<span>1</span></a></li>
 		
 			<li><a href="/tags/JS-基础/">JS 基础<span>1</span></a></li>
 		
-			<li><a href="/tags/blog搭建/">blog搭建<span>1</span></a></li>
+			<li><a href="/tags/图片居中/">图片居中<span>1</span></a></li>
+		
+			<li><a href="/tags/伪类-伪元素/">伪类 伪元素<span>1</span></a></li>
 		
 		 
 		</ul>

@@ -7,8 +7,7 @@
   <meta name="author" content="Roger">
   
   <meta name="description" content="本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。火星文之正则浅谈定义正则一般的格式
-123&amp;lt;script&amp;gt;	var re = /\b/;// 通常是反斜杠中写入内容&amp;lt;/script&amp;gt;
-以下是一些常用的正则符">
+123&amp;lt;script&amp;gt;	var re = /\b/;// 通常是反斜杠中写入内容&amp;lt;/script&amp;gt;">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -115,6 +114,7 @@
 
 	  <h3 id="本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。"><a href="#本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。" class="headerlink" title="本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。"></a>本人也是刚接触正则，跟大家感受其实一样，咋看就是火星文，但是花点耐心研究一下其实还是不难懂的，个人觉得正则难读不难写。</h3><h1 id="火星文之正则浅谈"><a href="#火星文之正则浅谈" class="headerlink" title="火星文之正则浅谈"></a>火星文之正则浅谈</h1><p>定义正则一般的格式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	var re = /\b/;// 通常是反斜杠中写入内容</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="以下是一些常用的正则符号"><a href="#以下是一些常用的正则符号" class="headerlink" title="以下是一些常用的正则符号"></a>以下是一些常用的正则符号</h3><p><img src="http://o70mrjf9r.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-05-14%20%E4%B8%8A%E5%8D%8810.17.25.png" alt=""></p>
 <p>以上是我目前所学的一些常用符号，下面将具体介绍一些实例：<br>很多情况下我们使用正则一般是为了配合数组的操作，最常用的几个是match()匹配，replace()替换等等，在这里我就用match()来举例，我们假设创建了一字符串2asD3fg4H56Jk8l；<br>简单的我们先来匹配一下数字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;2asD3fg4H56Jk8l&quot;;</span><br><span class="line">var re2=/\d/;</span><br><span class="line">console.log(str.match(re));//2</span><br></pre></td></tr></table></figure></p>
 <p>以上都能实现的事匹配一位数字，若要匹配所有数字，就要用g去匹配全局，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;2asD3fg4H56Jk8l&quot;;</span><br><span class="line">var re2=/\d/g;</span><br><span class="line">console.log(str.match(re));//234568</span><br></pre></td></tr></table></figure></p>
