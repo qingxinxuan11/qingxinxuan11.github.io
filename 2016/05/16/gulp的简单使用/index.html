@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CSS之图片居中 | 前端之坎</title>
+  <title>gulp的简单使用 | 前端之坎</title>
   <meta name="author" content="Roger">
   
-  <meta name="description" content="我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？CSS之图片居中代码其实很简单，如下">
+  <meta name="description" content="gulp入门指南gulp使用node.js让建构更加快速，不需要写出资料到硬盘暂存档案。   
+首先我们要安装gulp：1$ npm install gulp -g">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="CSS之图片居中"/>
+  <meta property="og:title" content="gulp的简单使用"/>
   <meta property="og:site_name" content="前端之坎"/>
 
   
@@ -91,7 +92,7 @@
 
 	
 		<div class="page-header page-header-inverse ">		
-			<h1 class="title title-inverse "> CSS之图片居中</h1>
+			<h1 class="title title-inverse "> gulp的简单使用</h1>
 		</div>		
 	
 
@@ -111,8 +112,17 @@
 	<div class="mypage">		
 	  		
 
-	  <h3 id="我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？"><a href="#我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？" class="headerlink" title="我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？"></a>我们在做一些网购界面的时候难免会遇到各种图片的展示框的居中问题，但是很多情况下图片的大小并不能保持一致，但是我们又要居中显示（为了美观），而我们并不会针对每一张图片去修改居中问题，那么来看一下如何解决这类问题呢？</h3><h1 id="CSS之图片居中"><a href="#CSS之图片居中" class="headerlink" title="CSS之图片居中"></a>CSS之图片居中</h1><p>代码其实很简单，如下<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;div1&quot;&gt;</span><br><span class="line">	&lt;img src=&quot;你的图片路径&quot; alt=&quot;&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">	.div1&#123;</span><br><span class="line">		width: 500px;</span><br><span class="line">		height: 300px;/* 我们假设展示框的宽高分别是500px和300px */</span><br><span class="line">		text-align: center;/* 设置框内内容水平居中 */</span><br><span class="line">		display: table-cell;/* 将框内内容转换成table元素（方便垂直居中） */</span><br><span class="line">		vertical-align: middle;/* 实现垂直居中 */</span><br><span class="line">	&#125;</span><br><span class="line">	.div img&#123;</span><br><span class="line">		max-width: 100%;</span><br><span class="line">		max-height: 100%;/* 这两句话：图片要么宽度最宽与展示框宽度一样，   要么高度与展示框高度一样，要么就自己宽高不变，三种情况会自己判断选择 */</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="具体展示如下"><a href="#具体展示如下" class="headerlink" title="具体展示如下"></a>具体展示如下</h2><p><img src="http://o70mrjf9r.bkt.clouddn.com/WeChat_1463108374.jpeg" alt=""><br><img src="http://o70mrjf9r.bkt.clouddn.com/WeChat_1463108476.jpeg" alt=""><br><img src="http://o70mrjf9r.bkt.clouddn.com/WeChat_1463108221.jpeg" alt=""></p>
+	  <h1 id="gulp入门指南"><a href="#gulp入门指南" class="headerlink" title="gulp入门指南"></a>gulp入门指南</h1><p>gulp使用node.js让建构更加快速，不需要写出资料到硬盘暂存档案。   </p>
+<h3 id="首先我们要安装gulp："><a href="#首先我们要安装gulp：" class="headerlink" title="首先我们要安装gulp："></a>首先我们要安装gulp：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp -g</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>一般我们需要权限才能安装，所以需在指令前面几sudo。<br>我们在使用gulp一般会在本地端的目录里面进行，那我们一定要先cd到我们所需要的目录，然后执行一下指令（先确定该目录下存在package.json档案，如果没有，可以执行npm init初始化设置）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp --save-dev</span><br></pre></td></tr></table></figure></p>
+<p>上述指令是将gulp安装到本地端的目录下，并记录package.json内的devDependencies物件。<br>接着是安装一些gulp外挂，常用的一般有：<br>1、拼接 (gulp-concat)；<br>2、压缩（包括gulp-jsmin,gulp-htmlmin,gulp-cssmin，gulp-imagemin等）；<br>3、清理档案 (gulp-clean)；</p>
+<h2 id="npm官网https-www-npmjs-com-你可以在搜索框搜索你要的外挂名字。"><a href="#npm官网https-www-npmjs-com-你可以在搜索框搜索你要的外挂名字。" class="headerlink" title="npm官网https://www.npmjs.com/你可以在搜索框搜索你要的外挂名字。"></a>npm官网<a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a>你可以在搜索框搜索你要的外挂名字。</h2><p>你可以通过以下指令来安装这些外挂：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp-concat --save-dev//其中gulp-concat就是外挂名</span><br></pre></td></tr></table></figure></p>
+<p>查看一个外挂是否安装成功，你可以到package.json下的devDependencies中查看。   </p>
+<h1 id="我们必须在目录之下建立一个gulpfile-js档案，用来载入所有已安装的外挂。"><a href="#我们必须在目录之下建立一个gulpfile-js档案，用来载入所有已安装的外挂。" class="headerlink" title="我们必须在目录之下建立一个gulpfile.js档案，用来载入所有已安装的外挂。"></a>我们必须在目录之下建立一个gulpfile.js档案，用来载入所有已安装的外挂。</h1><h3 id="载入外挂"><a href="#载入外挂" class="headerlink" title="载入外挂"></a>载入外挂</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;),</span><br><span class="line">	concat = require(&apos;gulp-concat&apos;),</span><br><span class="line">	jsmin = reuire(&apos;gulp-jsmin&apos;);//后面可以继续加</span><br></pre></td></tr></table></figure>
+<h3 id="建立任务gulp-task-任务名，任务依赖，回调"><a href="#建立任务gulp-task-任务名，任务依赖，回调" class="headerlink" title="建立任务gulp.task(任务名，任务依赖，回调)"></a>建立任务gulp.task(任务名，任务依赖，回调)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(&apos;task&apos;,function()&#123;//用来建立任务</span><br><span class="line">	gulp.src(&apos;需要操作的文件路径&apos;)//用来定义文档来源</span><br><span class="line">	.pipe(concat(&apos;新文件名&apos;))//pipe()串流来源档案到concat()拼接外挂；</span><br><span class="line">	.pipe(min())//串流来源档案到压缩外挂</span><br><span class="line">	.pipe(gulp.dest(&apos;新文件位置&apos;))//设定目的路径并输出</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="运行任务"><a href="#运行任务" class="headerlink" title="运行任务"></a>运行任务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp task//任务名</span><br></pre></td></tr></table></figure>
+<p>以上只是gulp最简单的运行，如想深入学习，可参照<a href="http://www.open-open.com/lib/view/open1417068223049.html" target="_blank" rel="external">http://www.open-open.com/lib/view/open1417068223049.html</a></p>
 	  
 	</div>
 
@@ -121,14 +131,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2016/05/16/gulp的简单使用/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2016/05/12/伪元素/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2016/05/13/CSS之图片居中/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -167,7 +177,7 @@
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="2016/05/13/CSS之图片居中/" data-title="CSS之图片居中" data-url="http://yoursite.com/2016/05/13/CSS之图片居中/"></div>  
+  	 <div class="ds-thread" data-thread-key="2016/05/16/gulp的简单使用/" data-title="gulp的简单使用" data-url="http://yoursite.com/2016/05/16/gulp的简单使用/"></div>  
   
 </section>
 
@@ -181,7 +191,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2016-05-13 
+	2016-05-16 
 	</div>
 	
 
@@ -189,14 +199,6 @@
     
 
 	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/图片居中/">图片居中<span>1</span></a></li>
-    </ul>
-	</div>
 		
 
 	<!-- toc -->
