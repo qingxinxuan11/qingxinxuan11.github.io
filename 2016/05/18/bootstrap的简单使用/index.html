@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>bootstrap的简单使用 | 前端之坎</title>
+  <meta name="author" content="Roger">
+  
+  <meta name="description" content="bootstrap的简单使用bootstrap是一款超级实用快捷的开发框架，如果能配合jade编辑，简直就是。。。。。。好了，话不多说，我们切入正题吧">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="bootstrap的简单使用"/>
+  <meta property="og:site_name" content="前端之坎"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">前端之坎</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> bootstrap的简单使用</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="bootstrap的简单使用"><a href="#bootstrap的简单使用" class="headerlink" title="bootstrap的简单使用"></a>bootstrap的简单使用</h1><p>bootstrap是一款超级实用快捷的开发框架，如果能配合jade编辑，简直就是。。。。。。<br>好了，话不多说，我们切入正题吧<br><a id="more"></a></p>
+<h3 id="bootstrap的英文官网http-getbootstrap-com"><a href="#bootstrap的英文官网http-getbootstrap-com" class="headerlink" title="bootstrap的英文官网http://getbootstrap.com/"></a>bootstrap的英文官网<a href="http://getbootstrap.com/" target="_blank" rel="external">http://getbootstrap.com/</a></h3><h3 id="bootstrap的中文官网http-v3-bootcss-com"><a href="#bootstrap的中文官网http-v3-bootcss-com" class="headerlink" title="bootstrap的中文官网http://v3.bootcss.com/"></a>bootstrap的中文官网<a href="http://v3.bootcss.com/" target="_blank" rel="external">http://v3.bootcss.com/</a></h3><p>首次我们需要引入bootstrap的框架，一般的我会直接使用其CDN加速服务链接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 新 Bootstrap 核心 CSS 文件 --&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 可选的Bootstrap主题文件（一般不用引入） --&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- jQuery文件。务必在bootstrap.min.js 之前引入，因为bootstrap是依靠jq的 --&gt;</span><br><span class="line">&lt;script src=&quot;//cdn.bootcss.com/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 最新的 Bootstrap 核心 JavaScript 文件 --&gt;</span><br><span class="line">&lt;script src=&quot;//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>###以上一定要注意jquery的引用一定要在bootstrap之前，因为bootstrap的使用是要依靠jquery框架的支持的<br>我们先来看一下最简单的bootstrap模版<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;!-- 这一句是为了选择最新版的IE浏览器渲染 --&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">    &lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br><span class="line">    &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Bootstrap --&gt;</span><br><span class="line">    &lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;</span><br><span class="line">    &lt;!-- WARNING: Respond.js doesn&apos;t work if you view the page via file:// --&gt;</span><br><span class="line">    &lt;!-- 这是为了适配IE9一下的兼容语句 --&gt;</span><br><span class="line">    &lt;!--[if lt IE 9]&gt;</span><br><span class="line">      &lt;script src=&quot;//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">      &lt;script src=&quot;//cdn.bootcss.com/respond.js/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;![endif]--&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h1&gt;你好，世界！&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- jQuery (necessary for Bootstrap&apos;s JavaScript plugins) --&gt;</span><br><span class="line">    &lt;script src=&quot;//cdn.bootcss.com/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;</span><br><span class="line">    &lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>bootstrap已经简单的设置了全局css样式，移除了body的margin声明并且设置为白色背景，还为排版设置了基本的字体、字号和行高，对全局链接这事了hover属性，当鼠标悬浮其上时才会出现下划线。</p>
+<h3 id="bootstrap之文本操作"><a href="#bootstrap之文本操作" class="headerlink" title="bootstrap之文本操作"></a>bootstrap之文本操作</h3><p>例：bootstrap对h1~h6重新设置了属性，具体可以参照以下的思维导图<br><img src="" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;hello&lt;/h1&gt;</span><br><span class="line">&lt;div class=&quot;h1&quot;&gt;hello&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>以上两个效果是一样的 </p>
+<p>例：bootstrap的代码风格<br>code标签只用来显示单行代码<br>pre标签是针对多行代码的，在其之后添加pre-scrollable类名，可控制最大高度为340px，一旦超出，就会在Y轴出现滚动条，在代码插入时，左右尖括号只能用&amp;lt和&amp;gt来代替。</p>
+<h3 id="强调内容："><a href="#强调内容：" class="headerlink" title="强调内容："></a>强调内容：</h3><p>一般可通过在class名中添加lead，来强调内容<br>strong和b标签用来加粗文字<br>em和i标签用来倾斜文字<br>small标签用来缩小文字，其缩小的是父级的字体大小<br>cite标签，通常表示它所包含的文本对某个参考文献的引用，比如书籍或者杂志的标题   </p>
+<h3 id="强调颜色（添加至class中）"><a href="#强调颜色（添加至class中）" class="headerlink" title="强调颜色（添加至class中）"></a>强调颜色（添加至class中）</h3><p>text-muted：提示，使用浅灰色（#999）<br>text-primary：主要，使用蓝色（#428bca）<br>text-success：成功，使用浅绿色(#3c763d)<br>text-info：通知信息，使用浅蓝色（#31708f）<br>text-warning：警告，使用黄色（#8a6d3b）<br>text-danger：危险，使用红色（）<br>text-inverse：使用褐色（#a94442） </p>
+<h3 id="文本对齐方式（添加至class中）"><a href="#文本对齐方式（添加至class中）" class="headerlink" title="文本对齐方式（添加至class中）"></a>文本对齐方式（添加至class中）</h3><p>text-left：左对齐<br>text-center：居中对齐<br>text-right：右对齐<br>text-justify：两端对齐   </p>
+<h3 id="列表-ul-ol-dl"><a href="#列表-ul-ol-dl" class="headerlink" title="列表 (ul,ol,dl)"></a>列表 (ul,ol,dl)</h3><p>list-styled：去掉项目符号<br>list-inline：变为水平列表<br>dl-horizontal：屏幕大雨768px时添加该属性才会有水平列表效果 </p>
+<h3 id="表格table"><a href="#表格table" class="headerlink" title="表格table"></a>表格table</h3><p>基础表格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;table class=&quot;table&quot;&gt;</span><br><span class="line">	&lt;thead&gt;</span><br><span class="line">		&lt;td&gt;</span><br><span class="line">			&lt;tr&gt;&lt;/tr&gt;</span><br><span class="line">		&lt;/td&gt;</span><br><span class="line">	&lt;/thead&gt;</span><br><span class="line">	&lt;tbody&gt;</span><br><span class="line">		&lt;td&gt;</span><br><span class="line">			&lt;tr&gt;&lt;/tr&gt;</span><br><span class="line">		&lt;/td&gt;</span><br><span class="line">	&lt;/tbody&gt;</span><br><span class="line">	&lt;tfoot&gt;</span><br><span class="line">		&lt;td&gt;</span><br><span class="line">			&lt;tr&gt;&lt;/tr&gt;</span><br><span class="line">		&lt;/td&gt;</span><br><span class="line">	&lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在table类名之后追加table-responsive变成响应式表格</p>
+<p>也可通过在类名里追加以下类名改变样式：<br>table-striped：斑马线表格<br>table-bordered：带边框的表格<br>table-hover：鼠标悬停高亮的表格<br>table-condensed：紧凑型表格</p>
+<h3 id="图片img-只要在img标签上添加对应的，类名"><a href="#图片img-只要在img标签上添加对应的，类名" class="headerlink" title="图片img(只要在img标签上添加对应的，类名)"></a>图片img(只要在img标签上添加对应的，类名)</h3><p>img-responsive：响应式图片<br>img-rounded：圆角图片<br>img-circle：圆形图片<br>img-thumbnail：缩略图片   </p>
+<h3 id="图标glyphic"><a href="#图标glyphic" class="headerlink" title="图标glyphic"></a>图标glyphic</h3><p>Bootstrap框架中也为大家提供了近200个不同的icon图片，而这些图标都是使用CSS3的@font-face属性配合字体来实现的icon效果。<a href="http://getbootstrap.com/components/#glyphicons" target="_blank" rel="external">http://getbootstrap.com/components/#glyphicons</a><br>图标的使用很简单，任何行级元素都可以作为其容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class=“glyphic glyphicon-search”&gt;&lt;/span&gt;</span><br><span class="line">&lt;span class=“glyphic glyphicon-asterisk”&gt;&lt;/span&gt;</span><br><span class="line">&lt;span class=“glyphic glyphicon-plus”&gt;&lt;/span&gt;</span><br><span class="line">&lt;span class=“glyphic glyphicon-cloud”&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="表单form"><a href="#表单form" class="headerlink" title="表单form"></a>表单form</h3><p>默认表单排列事纵向的，如果需要表单水平排列，只要追加form-inline类名即可<br>input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>必须带有type，多使用form-control来控制表单样式<br>input-sm：让控件比正常大小更小<br>input-lg：让控件比正常大小更大<br>placeholder：添加默认内容<br>disabled：禁用属性<br>单选复选框   </p>
+<p>select<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">	&lt;select class=&quot;form-control&quot; name=&quot;&quot; id=&quot;&quot;&gt;</span><br><span class="line">		&lt;option value=&quot;&quot;&gt;1&lt;/option&gt;</span><br><span class="line">		&lt;option value=&quot;&quot;&gt;2&lt;/option&gt;</span><br><span class="line">		&lt;option value=&quot;&quot;&gt;3&lt;/option&gt;</span><br><span class="line">	&lt;/select&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>默认只选择一个选项，若须多行选择，添加属性multiple  </p>
+<p>textarea<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">	&lt;textarea class=&quot;form-control&quot; name=&quot;&quot; id=&quot;&quot; rows=&quot;4&quot;&gt;&lt;/textarea&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>设置rows可定义其高度，设置cols可以设置其宽度。但如果textarea元素中添加了类名“form-control”类名，则无需设置cols属性   </p>
+<p>button<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">	&lt;button class=&quot;btn btn-default&quot;&gt;默认按钮&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>.btn类还支持a标签，type-submit的input标签<br>btn-primary：主要按钮<br>btn-success：成功按钮<br>btn-warning：警告按钮<br>ban-danger：危险按钮<br>btn-link：链接按钮<br>btn-lg：大型按钮<br>btn-sm：小型按钮<br>btn-xs：超小型按钮  </p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2016/05/16/gulp的简单使用/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">留言</h2>
+
+  
+  	 <div class="ds-thread" data-thread-key="2016/05/18/bootstrap的简单使用/" data-title="bootstrap的简单使用" data-url="http://yoursite.com/2016/05/18/bootstrap的简单使用/"></div>  
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2016-05-18 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'true' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 Roger
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
