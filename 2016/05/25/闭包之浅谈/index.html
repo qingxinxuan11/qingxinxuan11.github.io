@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>闭包之浅谈 | 前端之坎</title>
+  <meta name="author" content="Roger">
+  
+  <meta name="description" content="闭包一二事相信大家刚接触闭包时感到非常的不理解，昏头昏脑的，用流行语说就是懵逼。。。下面我大概说一下我自己结合别人blog之后的一些认识吧">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="闭包之浅谈"/>
+  <meta property="og:site_name" content="前端之坎"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">前端之坎</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> 闭包之浅谈</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="闭包一二事"><a href="#闭包一二事" class="headerlink" title="闭包一二事"></a>闭包一二事</h1><p>相信大家刚接触闭包时感到非常的不理解，昏头昏脑的，用流行语说就是懵逼。。。<br>下面我大概说一下我自己结合别人blog之后的一些认识吧<br><a id="more"></a></p>
+<h3 id="闭包（closure）是很多高级应用的依赖，我们必须要学会适当的使用它"><a href="#闭包（closure）是很多高级应用的依赖，我们必须要学会适当的使用它" class="headerlink" title="闭包（closure）是很多高级应用的依赖，我们必须要学会适当的使用它"></a>闭包（closure）是很多高级应用的依赖，我们必须要学会适当的使用它</h3><h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><p>首先我们需要清楚变量的作用域，javascript有两种变量，即全局变量和局部变量，我们都知道在javascript中，函数能访问其外部的变量，但是外部不能访问其内部的变量，生动的说来就是如果你在一辆装了反视玻璃的车里，你能看到外面行走的人，但是行人去看不到车里的你。<br>举个例子就是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var fn = (function ()&#123;</span><br><span class="line">	var a = 1;</span><br><span class="line">	var fn1 = (function ()&#123;</span><br><span class="line">		var b = 2;</span><br><span class="line">		console.log(a);//1</span><br><span class="line">	&#125;)();</span><br><span class="line">	console.log(b);//报错</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p>如上，fn能弹出fn之外的a，但是fn之内的b就是报错。  </p>
+<h2 id="如何读取内部变量？"><a href="#如何读取内部变量？" class="headerlink" title="如何读取内部变量？"></a>如何读取内部变量？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var fn = (function ()&#123;</span><br><span class="line">	var a = 1;</span><br><span class="line">	var fn1 = (function ()&#123;</span><br><span class="line">		var b = 2;</span><br><span class="line">		console.log(a);//1</span><br><span class="line">		return b;</span><br><span class="line">	&#125;)();</span><br><span class="line">	console.log(fn1);//2也就是返回的b的值</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>在这里，其实fn1函数已经是一个闭包了。</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>简单来说闭包就是能够读取其它函数内部变量的函数，所以也可以说闭包是连接函数内外部的桥梁。闭包一般来说有两个作用，一是读取其它函数内部的变量，二是将这些变量的值始终保持在内存中。<br>我们举个例子来理解一下上面这句话：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function fn1() &#123;</span><br><span class="line">	var a = 1;</span><br><span class="line">	function add() &#123;</span><br><span class="line">		a +=1;</span><br><span class="line">	&#125;;</span><br><span class="line">	function fn2() &#123;</span><br><span class="line">		console.log(a);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line">var result = fn1();</span><br><span class="line">result();//1</span><br><span class="line">add();</span><br><span class="line">result();//2</span><br></pre></td></tr></table></figure></p>
+<p>以上fn2就是闭包函数执行了2次，第一次输出是1，第二次输出是2，这就说明了函数fn1中的局部变量a一直保存在内存中，并没有在fn1调用后被自动清除。<br>因为原因就在于fn1是fn2的父函数，而fn2被赋给了一个全局变量，这导致fn2始终在内存中，而fn2的存在依赖于fn1，因此fn1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。</p>
+<h3 id="由于闭包会保存变量，这会加大内存消耗，所以不要滥用闭包；"><a href="#由于闭包会保存变量，这会加大内存消耗，所以不要滥用闭包；" class="headerlink" title="由于闭包会保存变量，这会加大内存消耗，所以不要滥用闭包；"></a>由于闭包会保存变量，这会加大内存消耗，所以不要滥用闭包；</h3><h2 id="以下提供两段代码深入了解一下闭包"><a href="#以下提供两段代码深入了解一下闭包" class="headerlink" title="以下提供两段代码深入了解一下闭包"></a>以下提供两段代码深入了解一下闭包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var name = &quot;The Window&quot;;</span><br><span class="line">　　var object = &#123;</span><br><span class="line">　　　　name : &quot;My Object&quot;,</span><br><span class="line">　　　　getNameFunc : function()&#123;</span><br><span class="line">　　　　　　return function()&#123;</span><br><span class="line">　　　　　　　　return this.name;</span><br><span class="line">　　　　　　&#125;;</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;;</span><br><span class="line">alert(object.getNameFunc()());//The window</span><br></pre></td></tr></table></figure>
+<p>var name = “The Window”;这是一个全局变量，指向的事window，this永远指向其函数拥有者，如果没有，就指向window，上述代码运行object.getNameFunc()()时，运行第一个括号时，返回的是内部的匿名函数，运行第二个括号时，执行的是返回过来的匿名函数，所以指向window.name<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var name = &quot;The Window&quot;;</span><br><span class="line">　　var object = &#123;</span><br><span class="line">　　　　name : &quot;My Object&quot;,</span><br><span class="line">　　　　getNameFunc : function()&#123;</span><br><span class="line">　　　　　　var that = this;//将当前object存给that</span><br><span class="line">　　　　　　return function()&#123;</span><br><span class="line">　　　　　　　　return that.name;</span><br><span class="line">　　　　　　&#125;;</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;;</span><br><span class="line">alert(object.getNameFunc()());//My Object</span><br></pre></td></tr></table></figure></p>
+<p>object.getNameFunc()()时，运行第一个括号时，返回的是内部的匿名函数，运行第二个括号时，执行的是返回object的name属性，所以指向object.name</p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2016/05/18/bootstrap的简单使用/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">留言</h2>
+
+  
+  	 <div class="ds-thread" data-thread-key="2016/05/25/闭包之浅谈/" data-title="闭包之浅谈" data-url="http://yoursite.com/2016/05/25/闭包之浅谈/"></div>  
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2016-05-25 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'true' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 Roger
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
