@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>伪元素 | 前端之坎</title>
+  <title>最简将固定px值转为自适应之metahandler.js | 前端之坎</title>
   <meta name="author" content="Roger">
   
-  <meta name="description" content="css之伪元素伪类我们先来说说伪类吧，它是一种状态，不是一个元素，基本的伪类有4种，分别是link、visited、hover、active。link：适用于未被访问的链接visited：和link相反，适用于被访问的链接hover：可以定义鼠标移入时的效果，但是元素未被激活，例如用户的鼠标移至一个元素时，给当前元素设定一个效果。当用户鼠标离开元素时，恢复元素原有的样式显示。active：适用于元素被激活时的样式，例如用户在按下鼠标之后，给元素一个效果，当用户放开鼠标后，恢复元素原有的样式。">
+  <meta name="description" content="相信现在很多公司会要求将移动端的网页做成自适应界面，为了达到更好的观摩效果，但是之前写的代码有太多了特别是大工程，当然你也可以用rem去实现，但是你需要将所有的px值转换为rem，你可以在网上搜到在线rem转换工具。或者。你也可以使用metahandler.js。使用metahandler非常简单，你只需要三步即可。">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="伪元素"/>
+  <meta property="og:title" content="最简将固定px值转为自适应之metahandler.js"/>
   <meta property="og:site_name" content="前端之坎"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header page-header-inverse ">		
-			<h1 class="title title-inverse "> 伪元素</h1>
+			<h1 class="title title-inverse "> 最简将固定px值转为自适应之metahandler.js</h1>
 		</div>		
 	
 
@@ -111,16 +111,14 @@
 	<div class="mypage">		
 	  		
 
-	  <h1 id="css之伪元素"><a href="#css之伪元素" class="headerlink" title="css之伪元素"></a>css之伪元素</h1><h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>我们先来说说伪类吧，它是一种状态，不是一个元素，基本的伪类有4种，分别是link、visited、hover、active。<br>link：适用于未被访问的链接<br>visited：和link相反，适用于被访问的链接<br>hover：可以定义鼠标移入时的效果，但是元素未被激活，例如用户的鼠标移至一个元素时，给当前元素设定一个效果。当用户鼠标离开元素时，恢复元素原有的样式显示。<br>active：适用于元素被激活时的样式，例如用户在按下鼠标之后，给元素一个效果，当用户放开鼠标后，恢复元素原有的样式。<br><a id="more"></a></p>
-<h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><p>基本常用的伪元素包括::first-line、::before、::after、::section、::first-letter<br>1、::first-line 匹配的是第一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;text&quot;&gt;</div><div class="line">	&lt;li&gt;First line&lt;/li&gt;</div><div class="line">	&lt;li&gt;Second line&lt;/li&gt;</div><div class="line">	&lt;li&gt;Third line&lt;/li&gt;</div><div class="line">&lt;/ul&gt; </div><div class="line">&lt;style&gt;</div><div class="line">	.text::first-line&#123;</div><div class="line">		color: red;	</div><div class="line">	&#125;	</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
-<p>以上代码输出First line的字体颜色是红色    </p>
-<p>2、::first-letter 匹配的是第一个字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;ABCDEF&lt;/p&gt; </div><div class="line">&lt;style&gt;</div><div class="line">	p::first-letter&#123;</div><div class="line">		color: red;</div><div class="line">	&#125;	</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
-<p>以上代码输出A是红色的</p>
-<p>3、::before 匹配的是该元素的之前的内容 和::after 匹配的是该元素的之后的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&lt;/div&gt;</div><div class="line">&lt;style&gt;</div><div class="line">	div::before&#123;</div><div class="line">		content: &apos;前内容&apos;;//引号中可以添加你需要在元素之前插入的内容，若无内容，该语句也不能省略！</div><div class="line">	&#125;</div><div class="line">	div::after&#123;</div><div class="line">		content: &apos;后内容&apos;;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
-<p>以上代码是在div之前插入前内容，在其之后插入后内容    </p>
-<p>4、::section 该元素作用是自定义鼠标选择样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">	::selection&#123;</div><div class="line">		background-color: blue;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
-<p>该代码作用是自定义选中时,背景颜色是蓝色   </p>
-	  
+	  <h3 id="相信现在很多公司会要求将移动端的网页做成自适应界面，为了达到更好的观摩效果，但是之前写的代码有太多了特别是大工程，当然你也可以用rem去实现，但是你需要将所有的px值转换为rem，你可以在网上搜到在线rem转换工具。或者。你也可以使用metahandler-js。使用metahandler非常简单，你只需要三步即可。"><a href="#相信现在很多公司会要求将移动端的网页做成自适应界面，为了达到更好的观摩效果，但是之前写的代码有太多了特别是大工程，当然你也可以用rem去实现，但是你需要将所有的px值转换为rem，你可以在网上搜到在线rem转换工具。或者。你也可以使用metahandler-js。使用metahandler非常简单，你只需要三步即可。" class="headerlink" title="相信现在很多公司会要求将移动端的网页做成自适应界面，为了达到更好的观摩效果，但是之前写的代码有太多了特别是大工程，当然你也可以用rem去实现，但是你需要将所有的px值转换为rem，你可以在网上搜到在线rem转换工具。或者。你也可以使用metahandler.js。使用metahandler非常简单，你只需要三步即可。"></a>相信现在很多公司会要求将移动端的网页做成自适应界面，为了达到更好的观摩效果，但是之前写的代码有太多了特别是大工程，当然你也可以用rem去实现，但是你需要将所有的px值转换为rem，你可以在网上搜到在线rem转换工具。或者。你也可以使用metahandler.js。使用metahandler非常简单，你只需要三步即可。</h3><a id="more"></a>
+<h3 id="一、引入metahandler-js文件，你可以从下面copy保存下来。"><a href="#一、引入metahandler-js文件，你可以从下面copy保存下来。" class="headerlink" title="一、引入metahandler.js文件，你可以从下面copy保存下来。"></a>一、引入metahandler.js文件，你可以从下面copy保存下来。</h3><p><a href="http://ohc7xw40d.bkt.clouddn.com/metahandler.js" target="_blank" rel="external">查看代码</a></p>
+<h3 id="二、设置视口宽度meta"><a href="#二、设置视口宽度meta" class="headerlink" title="二、设置视口宽度meta"></a>二、设置视口宽度meta</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta content=&quot;target-densitydpi=device-dpi,width=750&quot; name=&quot;viewport&quot;&gt;</div></pre></td></tr></table></figure>
+<p></p><p>其中width=750，是根据PSD设计稿来的，设计稿宽度是多少，width就是多少。</p><p></p>
+<h3 id="三、引入metahandler-js文件，并改变参数设置"><a href="#三、引入metahandler-js文件，并改变参数设置" class="headerlink" title="三、引入metahandler.js文件，并改变参数设置"></a>三、引入metahandler.js文件，并改变参数设置</h3><p>找到最后的函数引用，改变其参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">opt.fixViewportWidth(750);</div></pre></td></tr></table></figure></p>
+<p>该参数的设置也是根据PSD设计稿来的</p>
+<h3 id="四、将所有的之前写好的样式值变成PSD一样的值，就是PSD是多少你就给多少"><a href="#四、将所有的之前写好的样式值变成PSD一样的值，就是PSD是多少你就给多少" class="headerlink" title="四、将所有的之前写好的样式值变成PSD一样的值，就是PSD是多少你就给多少"></a>四、将所有的之前写好的样式值变成PSD一样的值，就是PSD是多少你就给多少</h3><p></p><p>可能之前公司写的样式是PSD的一半，我们要手动扩大，如果你一个个去扩大，这将耗费大量的精力，这里有我自己写的一个px值转换工具，<span style="color: red;">建议转换前用代码整理工具整理一下，否则会出错可能</span>。</p><br><a href="http://ohc7xw40d.bkt.clouddn.com/filter.html" target="_blank" rel="external">px值转换工具</a><p></p>
+<h3 id="五、没有啦。。。。"><a href="#五、没有啦。。。。" class="headerlink" title="五、没有啦。。。。"></a>五、没有啦。。。。</h3>	  
 	</div>
 
 	<div>
@@ -128,14 +126,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2016/05/13/CSS之图片居中/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2016/05/12/正则之一二事/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2016/06/12/画布canvas的简单入门-md/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -174,7 +172,7 @@
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="2016/05/12/伪元素/" data-title="伪元素" data-url="http://yoursite.com/2016/05/12/伪元素/"></div>  
+  	 <div class="ds-thread" data-thread-key="2016/11/26/最简将固定px值转为自适应/" data-title="最简将固定px值转为自适应之metahandler.js" data-url="http://yoursite.com/2016/11/26/最简将固定px值转为自适应/"></div>  
   
 </section>
 
@@ -188,7 +186,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2016-05-12 
+	2016-11-26 
 	</div>
 	
 
@@ -196,14 +194,6 @@
     
 
 	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/伪类-伪元素/">伪类 伪元素<span>1</span></a></li>
-    </ul>
-	</div>
 		
 
 	<!-- toc -->
